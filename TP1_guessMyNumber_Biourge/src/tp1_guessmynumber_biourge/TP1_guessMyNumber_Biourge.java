@@ -27,18 +27,34 @@ public class TP1_guessMyNumber_Biourge {
         System.out.println("Saissisez un nombre");
         choice = sc.nextInt();
         while (choice != n) {
-            
+
             if (choice < n) {
                 System.out.println("Trop petit");
-                            System.out.println("Saissisez un nombre");
+                System.out.println("Saissisez un nouveau nombre");
                 choice = sc.nextInt();
                 i = i + 1;
+                if (choice == n) {
+                    System.out.println("Bravo vous avez trouve");
+                    if (i == 0) {
+                        System.out.println("Nombre d'essais total: 1");
+                    } else {
+                        System.out.println("Nombre d'essais total: " + i);
+                    }
+                }
             } else if (choice > n) {
                 System.out.println("Trop grand");
                 i = i + 1;
-            } else if (choice == n) {
-                System.out.println("Bravo vous avez trouvee");
-                System.out.println("Nombre d'essais total: " + i);
+                System.out.println("Saissisez un nouveau nombre");
+                choice = sc.nextInt();
+                if (choice == n) {
+                    System.out.println("Bravo vous avez trouve");
+                    if (i == 0) {
+                        System.out.println("Nombre d'essais total: 1");
+                    } else {
+                        System.out.println("Nombre d'essais total: " + i);
+                    }
+                }
+
             }
 
         }
