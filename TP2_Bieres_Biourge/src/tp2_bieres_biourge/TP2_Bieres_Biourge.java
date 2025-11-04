@@ -18,18 +18,21 @@ public class TP2_Bieres_Biourge {
 
     BouteilleBiere uneBiere = new BouteilleBiere("Cuvee des trolls", 7.0 ,"Dubuisson") ;
     uneBiere.lireEtiquette();
+    uneBiere.Decapsuler();
+    System.out.println(uneBiere);
     
     BouteilleBiere uneSecondeBiere = new BouteilleBiere("Leffe", 6.6 ,"Abbaye de Leffe") ;
     uneSecondeBiere.lireEtiquette();
     
     BouteilleBiere uneTroisiemeBiere = new BouteilleBiere("Heineken", 8.6 ,"Abbaye de Heineken") ;
     uneTroisiemeBiere.lireEtiquette();
-    
-    BouteilleBiere uneQuatriemeBiere = new BouteilleBiere("Leffe", 9.6 ,"Abbaye de Leffe") ;
+    System.out.println(uneTroisiemeBiere);
+    BouteilleBiere uneQuatriemeBiere = new BouteilleBiere("chouffe", 9.6 ,"chouf") ;
     uneQuatriemeBiere.lireEtiquette();
     
-    BouteilleBiere uneCinquimeBiere = new BouteilleBiere("Leffe", 10.8 ,"Abbaye de Leffe") ;
+    BouteilleBiere uneCinquimeBiere = new BouteilleBiere("86", 10.8 ,"Abbaye 86") ;
     uneCinquimeBiere.lireEtiquette();
+    
     
     }
 }
