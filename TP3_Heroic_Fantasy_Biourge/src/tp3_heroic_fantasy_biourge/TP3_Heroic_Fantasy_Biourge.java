@@ -4,6 +4,8 @@
  */
 package tp3_heroic_fantasy_biourge;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author utilisateur
@@ -15,10 +17,20 @@ public class TP3_Heroic_Fantasy_Biourge {
      */
     public static void main(String[] args) {
         // TP3 exercice 1 ; 12/11/2025; Arthur Biourge
-        Epee Epee1=new Epee("Excalibur",7,5);
-        Epee Epee2=new Epee("Durandal",4,7);
-        Baton Baton1= new Baton("Chêne", 4, 5);
-        Baton Baton2= new Baton( "Charme", 5, 6);
+        Epee Epee1 = new Epee("Excalibur", 7, 5);
+        Epee Epee2 = new Epee("Durandal", 4, 7);
+        Baton Baton1 = new Baton("Chene", 4, 5);
+        Baton Baton2 = new Baton("Charme", 5, 6);
+
+        ArrayList<arme> inventaire = new ArrayList<arme>();
+        inventaire.add(Epee1);
+        inventaire.add(Epee2);
+        inventaire.add(Baton1);
+        inventaire.add(Baton2);
+        
+        for (int i=0 ; i<inventaire.size();i++ ){
+        System.out.println(inventaire.get(i));
+        }
     }
     
 }
