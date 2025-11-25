@@ -4,6 +4,12 @@
  */
 package tp3_heroic_fantasy_biourge;
 
+import Personnages.Guerrier;
+import Personnages.Magicien;
+import Personnages.Personnage;
+import Armes.Baton;
+import Armes.Epee;
+import Armes.arme;
 import java.util.ArrayList;
 
 /**
@@ -30,6 +36,20 @@ public class TP3_Heroic_Fantasy_Biourge {
         
         for (int i=0 ; i<inventaire.size();i++ ){
         System.out.println(inventaire.get(i));
+        }
+        Magicien Magicien1 = new Magicien("Gandalf",65,true );
+        Magicien Magicien2 = new Magicien("Garcimore",44,false );
+        Guerrier Guerrier1 = new Guerrier("Conan", 78, false );
+        Guerrier Guerrier2 = new Guerrier( "Lannister", 45,true );
+        
+        ArrayList<Personnage> combattants = new ArrayList<Personnage>();
+        combattants.add(Magicien1);
+        combattants.add(Magicien2);
+        combattants.add(Guerrier1);
+        combattants.add(Guerrier2);
+        
+        for (int i=0 ; i<combattants.size();i++ ){
+        System.out.println(combattants.get(i));
         }
     }
     
