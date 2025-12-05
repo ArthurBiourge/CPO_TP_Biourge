@@ -24,7 +24,7 @@
     <Property name="useNullLayout" type="boolean" value="false"/>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="texte_intro">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
@@ -34,7 +34,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_0">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
@@ -44,7 +44,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
@@ -54,7 +54,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel4"/>
       </Properties>
@@ -64,7 +64,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
@@ -74,7 +74,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="texte_lbl_nb_chiffres_exacts">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel6"/>
       </Properties>
@@ -84,7 +84,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="texte_nb_chiffres_exacts">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel7"/>
       </Properties>
@@ -94,7 +94,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="texte_lbl_nb_chiffres_haut">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel8"/>
       </Properties>
@@ -104,7 +104,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="texte_nb_chiffres_haut">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel9"/>
       </Properties>
@@ -114,7 +114,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel10">
+    <Component class="javax.swing.JLabel" name="texte_lbl_nb_chiffres_bas">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel10"/>
       </Properties>
@@ -124,7 +124,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel11">
+    <Component class="javax.swing.JLabel" name="texte_nb_chiffres_bas">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel11"/>
       </Properties>
@@ -134,7 +134,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="texte_score">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel12"/>
       </Properties>
@@ -144,7 +144,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="texte_tentatives">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel13"/>
       </Properties>
@@ -154,7 +154,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="up_chiffre_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton1"/>
       </Properties>
@@ -164,7 +164,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="up_chiffre_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton2"/>
       </Properties>
@@ -174,7 +174,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="up_chiffre_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton3"/>
       </Properties>
@@ -184,7 +184,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="up_chiffre_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton4"/>
       </Properties>
@@ -194,7 +194,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="down_chiffre_1">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton5"/>
       </Properties>
@@ -204,7 +204,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="down_chiffres_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton6"/>
       </Properties>
@@ -214,7 +214,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
+    <Component class="javax.swing.JButton" name="down_chiffres_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton7"/>
       </Properties>
@@ -224,7 +224,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton8">
+    <Component class="javax.swing.JButton" name="down_chiffres_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton8"/>
       </Properties>
@@ -234,7 +234,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton9">
+    <Component class="javax.swing.JButton" name="bouton_tester">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton9"/>
       </Properties>
@@ -244,7 +244,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton10">
+    <Component class="javax.swing.JButton" name="bouton_recommencer">
       <Properties>
         <Property name="text" type="java.lang.String" value="jButton10"/>
       </Properties>
