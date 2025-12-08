@@ -9,5 +9,19 @@ package miniprojet_cadenas_biourge;
  * @author utilisateur
  */
 public class Cadenas {
+    private int [] tabPropose = new int[4];
+    private int [] tabChercher = new int[4];
+    int miseindice;
+    
+    public int mise_a_jour(int indice, int[] tabProposer,boolean up){
+        if up==true
+        
+        mis
+    }
+        
+        
+    
+    
+    
     
 }
