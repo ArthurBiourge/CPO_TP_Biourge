@@ -9,25 +9,25 @@ package miniprojet_cadenas_biourge;
  * @author utilisateur
  */
 public class Cadenas {
-    private int [] tabPropose = new int[4];
-    private int [] tabChercher = new int[4];
+
+    private int[] tabPropose = new int[4];
+    private int[] tabChercher = new int[4];
     int Valeur;
-    
-    public int mise_a_jour(int Valeur_case,boolean up){
-        if (up==true){
-           Valeur= Valeur_case+1;
+
+    public int mise_a_jour(int Valeur_case, boolean up) {
+        if (up == true) {
+            Valeur = Valeur_case + 1;
+            if (Valeur > 9) {
+                Valeur = 0;
+            }
+        } else {
+            Valeur = Valeur_case - 1;
         }
-        else
-            Valeur=Valeur_case-1;
-    
-    return Valeur;}
-        
-        
-    
-        
-        
-    
-    
-    
+        if (Valeur < 0) {
+            Valeur = 9;
+        }
+
+        return Valeur;
+    }
     
 }
