@@ -11,13 +11,19 @@ package miniprojet_cadenas_biourge;
 public class Cadenas {
     private int [] tabPropose = new int[4];
     private int [] tabChercher = new int[4];
-    int miseindice;
+    int Valeur;
     
-    public int mise_a_jour(int indice, int[] tabProposer,boolean up){
-        if up==true
+    public int mise_a_jour(int Valeur_case,boolean up){
+        if (up==true){
+           Valeur= Valeur_case+1;
+        }
+        else
+            Valeur=Valeur_case-1;
+    
+    return Valeur;}
         
-        mis
-    }
+        
+    
         
         
     
