@@ -9,14 +9,18 @@ package miniprojet_cadenas_biourge;
  * @author utilisateur
  */
 public class InterfaceCode extends javax.swing.JFrame {
-    
+    private Cadenas partie;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InterfaceCode.class.getName());
 
     /**
      * Creates new form InterfaceCode
      */
     public InterfaceCode() {
+        
         initComponents();
+        texte_chiffre_0.setText("0");
+        partie =new Cadenas ();
+
     }
 
     /**
@@ -161,9 +165,10 @@ public class InterfaceCode extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-        // TODO add your handling code here:
+   
+        
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void down_chiffres_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffres_2ActionPerformed
@@ -194,7 +199,7 @@ public class InterfaceCode extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new InterfaceCode().setVisible(true));
     }
