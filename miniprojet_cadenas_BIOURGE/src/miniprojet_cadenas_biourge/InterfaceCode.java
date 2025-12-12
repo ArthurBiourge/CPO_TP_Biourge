@@ -104,7 +104,7 @@ public class InterfaceCode extends javax.swing.JFrame {
         getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 10, -1));
 
         texte_lbl_nb_chiffres_bas.setText("Nombre de chiffres trop bas :");
-        getContentPane().add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 190, -1));
+        getContentPane().add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, -1));
 
         texte_nb_chiffres_bas.setText("0");
         getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
@@ -228,7 +228,24 @@ public class InterfaceCode extends javax.swing.JFrame {
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
         // TODO add your handling code here:
-       
+        int[] tab_a_envoyer= new int[4];
+        int[] tab_reçu= new int[4];
+        texte_nb_chiffres_exacts.setText("0");
+        texte_nb_chiffres_bas.setText("0"); // réinisialisation de l'aide
+        texte_nb_chiffres_haut.setText("0");
+        tab_a_envoyer[1]=Integer.parseInt(texte_chiffre_0.getText());
+        tab_a_envoyer[2]=Integer.parseInt(texte_chiffre_1.getText());
+        tab_a_envoyer[3]=Integer.parseInt(texte_chiffre_2.getText()); //combinaison proposer par le joueur et envoyer pour vérification
+        tab_a_envoyer[4]=Integer.parseInt(texte_chiffre_3.getText());
+        tab_reçu=partie.Tester(tab_a_envoyer);
+        
+        
+        
+        if (tab_reçu[3] == 1){
+            texte
+        }
+ 
+        
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
