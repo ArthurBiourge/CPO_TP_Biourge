@@ -402,6 +402,10 @@ public class InterfaceCode extends javax.swing.JFrame {
         texte_nb_chiffres_bas.setText("0");
         texte_nb_chiffres_haut.setText("0");
         texte_tentatives_nb.setText("0");
+        texte_chiffre_0.setText("0");
+        texte_chiffre_1.setText("0");
+        texte_chiffre_2.setText("0");
+        texte_chiffre_3.setText("0");
         
         
 
