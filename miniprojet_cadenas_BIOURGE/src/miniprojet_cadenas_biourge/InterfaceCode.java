@@ -9,6 +9,7 @@ package miniprojet_cadenas_biourge;
  * @author utilisateur
  */
 public class InterfaceCode extends javax.swing.JFrame {
+
     private Cadenas partie;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InterfaceCode.class.getName());
 
@@ -16,10 +17,11 @@ public class InterfaceCode extends javax.swing.JFrame {
      * Creates new form InterfaceCode
      */
     public InterfaceCode() {
-        
+
         initComponents();
         texte_chiffre_0.setText("0");
-        partie =new Cadenas ();
+        partie = new Cadenas();
+        partie.Combinaison();
 
     }
 
@@ -124,15 +126,35 @@ public class InterfaceCode extends javax.swing.JFrame {
         getContentPane().add(up_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         up_chiffre_2.setText("     /\\     ");
+        up_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                up_chiffre_2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(up_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
 
         up_chiffre_3.setText("     /\\     ");
+        up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                up_chiffre_3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
 
         up_chiffre_4.setText("     /\\     ");
+        up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                up_chiffre_4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
 
         down_chiffre_1.setText("     \\/     ");
+        down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                down_chiffre_1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(down_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         down_chiffres_2.setText("     \\/     ");
@@ -144,9 +166,19 @@ public class InterfaceCode extends javax.swing.JFrame {
         getContentPane().add(down_chiffres_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, -1));
 
         down_chiffres_3.setText("     \\/     ");
+        down_chiffres_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                down_chiffres_3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(down_chiffres_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 150, -1, -1));
 
         down_chiffres_4.setText("     \\/     ");
+        down_chiffres_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                down_chiffres_4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(down_chiffres_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, -1, -1));
 
         bouton_tester.setText("Tester");
@@ -165,19 +197,129 @@ public class InterfaceCode extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-   
-        
+        String Texte_Début_0;
+        int Valeur_Début_0;
+        String Texte_Fin_0;
+        int Valeur_Fin_0;
+        boolean up_0 = true;
+        Texte_Début_0 = texte_chiffre_0.getText();
+        Valeur_Début_0 = Integer.parseInt(Texte_Début_0); // j'utilise Integer.parseInt qui est classe.methode() qui prend en entré une chaines de caractère et qui renvoie un int (.parseInt est utilisé car je vais faire des calcule avec la valeur obtenue dans ma classe cadenas). 
+        Valeur_Fin_0 = partie.mise_a_jour(Valeur_Début_0, up_0);
+        Texte_Fin_0 = Valeur_Fin_0 + "";
+        texte_chiffre_0.setText(Texte_Fin_0);
+
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void down_chiffres_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffres_2ActionPerformed
         // TODO add your handling code here:
+        String Texte_Début_1;
+        int Valeur_Début_1;
+        String Texte_Fin_1;
+        int Valeur_Fin_1;
+        boolean down_1 = false;
+        Texte_Début_1 = texte_chiffre_1.getText();
+        Valeur_Début_1 = Integer.parseInt(Texte_Début_1);
+        Valeur_Fin_1 = partie.mise_a_jour(Valeur_Début_1, down_1);
+        Texte_Fin_1 = Valeur_Fin_1 + "";
+        texte_chiffre_1.setText(Texte_Fin_1);
     }//GEN-LAST:event_down_chiffres_2ActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
         // TODO add your handling code here:
+       
     }//GEN-LAST:event_bouton_testerActionPerformed
+
+    private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_0;
+        int Valeur_Début_0;
+        String Texte_Fin_0;
+        int Valeur_Fin_0;
+        boolean down_0 = false;
+        Texte_Début_0 = texte_chiffre_0.getText();
+        Valeur_Début_0 = Integer.parseInt(Texte_Début_0); // j'utilise Integer.parseInt qui est classe.methode() qui prend en entré une chaines de caractère et qui renvoie un int (.parseInt est utilisé car je vais faire des calcule avec la valeur obtenue dans ma classe cadenas). 
+        Valeur_Fin_0 = partie.mise_a_jour(Valeur_Début_0, down_0);
+        Texte_Fin_0 = Valeur_Fin_0 + "";
+        texte_chiffre_0.setText(Texte_Fin_0);
+    }//GEN-LAST:event_down_chiffre_1ActionPerformed
+
+    private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_1;
+        int Valeur_Début_1;
+        String Texte_Fin_1;
+        int Valeur_Fin_1;
+        boolean up_1 = true;
+
+        Texte_Début_1 = texte_chiffre_1.getText();
+        Valeur_Début_1 = Integer.parseInt(Texte_Début_1);
+        Valeur_Fin_1 = partie.mise_a_jour(Valeur_Début_1, up_1);
+        Texte_Fin_1 = Valeur_Fin_1 + "";
+
+        texte_chiffre_1.setText(Texte_Fin_1);
+    }//GEN-LAST:event_up_chiffre_2ActionPerformed
+
+    private void down_chiffres_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffres_3ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_2;
+        int Valeur_Début_2;
+        String Texte_Fin_2;
+        int Valeur_Fin_2;
+        boolean down_2 = false;
+        Texte_Début_2 = texte_chiffre_2.getText();
+        Valeur_Début_2 = Integer.parseInt(Texte_Début_2);
+        Valeur_Fin_2 = partie.mise_a_jour(Valeur_Début_2, down_2);
+        Texte_Fin_2 = Valeur_Fin_2 + "";
+        texte_chiffre_2.setText(Texte_Fin_2);
+    }//GEN-LAST:event_down_chiffres_3ActionPerformed
+
+    private void down_chiffres_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffres_4ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_3;
+        int Valeur_Début_3;
+        String Texte_Fin_3;
+        int Valeur_Fin_3;
+        boolean down_3 = false;
+        Texte_Début_3 = texte_chiffre_3.getText();
+        Valeur_Début_3 = Integer.parseInt(Texte_Début_3);
+        Valeur_Fin_3 = partie.mise_a_jour(Valeur_Début_3, down_3);
+        Texte_Fin_3 = Valeur_Fin_3 + "";
+        texte_chiffre_3.setText(Texte_Fin_3);
+    }//GEN-LAST:event_down_chiffres_4ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_2;
+        int Valeur_Début_2;
+        String Texte_Fin_2;
+        int Valeur_Fin_2;
+        boolean up_2 = true;
+
+        Texte_Début_2 = texte_chiffre_2.getText();
+        Valeur_Début_2 = Integer.parseInt(Texte_Début_2);
+        Valeur_Fin_2 = partie.mise_a_jour(Valeur_Début_2, up_2);
+        Texte_Fin_2 = Valeur_Fin_2 + "";
+
+        texte_chiffre_2.setText(Texte_Fin_2);
+    }//GEN-LAST:event_up_chiffre_3ActionPerformed
+
+    private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
+        // TODO add your handling code here:
+        String Texte_Début_3;
+        int Valeur_Début_3;
+        String Texte_Fin_3;
+        int Valeur_Fin_3;
+        boolean up_3 = true;
+
+        Texte_Début_3 = texte_chiffre_3.getText();
+        Valeur_Début_3 = Integer.parseInt(Texte_Début_3);
+        Valeur_Fin_3 = partie.mise_a_jour(Valeur_Début_3, up_3);
+        Texte_Fin_3 = Valeur_Fin_3 + "";
+
+        texte_chiffre_3.setText(Texte_Fin_3);
+    }//GEN-LAST:event_up_chiffre_4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,7 +341,7 @@ public class InterfaceCode extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new InterfaceCode().setVisible(true));
     }
