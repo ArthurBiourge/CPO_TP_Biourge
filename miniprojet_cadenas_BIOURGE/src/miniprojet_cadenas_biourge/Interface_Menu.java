@@ -30,51 +30,32 @@ public class Interface_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         texte_titre_jeu = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        Bouton_Jouer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        texte_titre_jeu.setText("jLabel1");
+        texte_titre_jeu.setFont(new java.awt.Font("Maiandra GD", 2, 48)); // NOI18N
+        texte_titre_jeu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        texte_titre_jeu.setText("Cadenas");
+        getContentPane().add(texte_titre_jeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 340, 59));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Bouton_Jouer.setText("Jouer");
+        Bouton_Jouer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Bouton_JouerActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(texte_titre_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addComponent(jButton1)))
-                .addContainerGap(162, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(texte_titre_jeu, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(jButton1)
-                .addContainerGap(131, Short.MAX_VALUE))
-        );
+        getContentPane().add(Bouton_Jouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Bouton_JouerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_JouerActionPerformed
     InterfaceCode i = new InterfaceCode();
     i.setVisible(true);
     this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Bouton_JouerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,7 +83,7 @@ public class Interface_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Bouton_Jouer;
     private javax.swing.JLabel texte_titre_jeu;
     // End of variables declaration//GEN-END:variables
 }
