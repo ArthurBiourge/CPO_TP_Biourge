@@ -19,6 +19,7 @@ public class InterfaceCode extends javax.swing.JFrame {
     public InterfaceCode() {
 
         initComponents();
+        texte_résultat.setText("");
         texte_chiffre_0.setText("0");
         partie = new Cadenas();
         partie.Combinaison();
@@ -58,6 +59,7 @@ public class InterfaceCode extends javax.swing.JFrame {
         bouton_tester = new javax.swing.JButton();
         bouton_recommencer = new javax.swing.JButton();
         texte_résultat = new javax.swing.JLabel();
+        texte_tentatives_nb = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -113,9 +115,9 @@ public class InterfaceCode extends javax.swing.JFrame {
         getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
 
         texte_tentatives.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
-        texte_tentatives.setText("0 sur 5");
+        texte_tentatives.setText("   sur 5");
         texte_tentatives.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 80, 60));
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 80, 60));
 
         up_chiffre_1.setText("     /\\     ");
         up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
@@ -190,10 +192,20 @@ public class InterfaceCode extends javax.swing.JFrame {
         getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 93, 90, 30));
 
         bouton_recommencer.setText("Recommencer");
+        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton_recommencerActionPerformed(evt);
+            }
+        });
         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
         texte_résultat.setText("jLabel1");
         getContentPane().add(texte_résultat, new org.netbeans.lib.awtextra.AbsoluteConstraints(208, 280, 80, -1));
+
+        texte_tentatives_nb.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
+        texte_tentatives_nb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        texte_tentatives_nb.setText("0");
+        getContentPane().add(texte_tentatives_nb, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 20, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -228,24 +240,57 @@ public class InterfaceCode extends javax.swing.JFrame {
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
         // TODO add your handling code here:
-        int[] tab_a_envoyer= new int[4];
-        int[] tab_reçu= new int[4];
+        int[] tab_a_envoyer = new int[4];
+        int[] tab_reçu = new int[4];
+        int tentative;
+        tentative = Integer.parseInt(texte_tentatives_nb.getText());
+
         texte_nb_chiffres_exacts.setText("0");
         texte_nb_chiffres_bas.setText("0"); // réinisialisation de l'aide
         texte_nb_chiffres_haut.setText("0");
-        tab_a_envoyer[1]=Integer.parseInt(texte_chiffre_0.getText());
-        tab_a_envoyer[2]=Integer.parseInt(texte_chiffre_1.getText());
-        tab_a_envoyer[3]=Integer.parseInt(texte_chiffre_2.getText()); //combinaison proposer par le joueur et envoyer pour vérification
-        tab_a_envoyer[4]=Integer.parseInt(texte_chiffre_3.getText());
-        tab_reçu=partie.Tester(tab_a_envoyer);
-        
-        
-        
-        if (tab_reçu[3] == 1){
-            texte
+        tab_a_envoyer[0] = Integer.parseInt(texte_chiffre_0.getText());
+        tab_a_envoyer[1] = Integer.parseInt(texte_chiffre_1.getText());
+        tab_a_envoyer[2] = Integer.parseInt(texte_chiffre_2.getText()); //combinaison proposer par le joueur et envoyer pour vérification
+        tab_a_envoyer[3] = Integer.parseInt(texte_chiffre_3.getText());
+        tab_reçu = partie.Tester(tab_a_envoyer);
+
+        if (tab_reçu[3] == 1) {
+            tentative += 1;
+            texte_tentatives_nb.setText(tentative + "");
+            bouton_tester.setEnabled(false);
+            up_chiffre_1.setEnabled(false);
+            up_chiffre_2.setEnabled(false);
+            up_chiffre_3.setEnabled(false);
+            up_chiffre_4.setEnabled(false);
+            down_chiffre_1.setEnabled(false);
+            down_chiffres_2.setEnabled(false);
+            down_chiffres_3.setEnabled(false);
+            down_chiffres_4.setEnabled(false);
+
+            texte_résultat.setText("Victoire");
+        } else if (tab_reçu[3] == 0) {
+            tentative += 1;
+            if (tentative == 5) {
+                bouton_tester.setEnabled(false);
+                up_chiffre_1.setEnabled(false);
+                up_chiffre_2.setEnabled(false);
+                up_chiffre_3.setEnabled(false);
+                up_chiffre_4.setEnabled(false);
+                down_chiffre_1.setEnabled(false);
+                down_chiffres_2.setEnabled(false);
+                down_chiffres_3.setEnabled(false);
+                down_chiffres_4.setEnabled(false);
+
+                texte_résultat.setText("Perdu");
+            }
+            texte_tentatives_nb.setText(tentative + "");
+            texte_nb_chiffres_exacts.setText(tab_reçu[0] + "");
+            texte_nb_chiffres_bas.setText(tab_reçu[1] + "");
+            texte_nb_chiffres_haut.setText(tab_reçu[2] + "");
+
         }
- 
-        
+
+
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
@@ -338,6 +383,31 @@ public class InterfaceCode extends javax.swing.JFrame {
         texte_chiffre_3.setText(Texte_Fin_3);
     }//GEN-LAST:event_up_chiffre_4ActionPerformed
 
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
+        // TODO add your handling code here:
+        texte_résultat.setText("");
+        texte_chiffre_0.setText("0");
+        partie = new Cadenas();
+        partie.Combinaison();
+        bouton_tester.setEnabled(true);
+        up_chiffre_1.setEnabled(true);
+        up_chiffre_2.setEnabled(true);
+        up_chiffre_3.setEnabled(true);
+        up_chiffre_4.setEnabled(true);
+        down_chiffre_1.setEnabled(true);
+        down_chiffres_2.setEnabled(true);
+        down_chiffres_3.setEnabled(true);
+        down_chiffres_4.setEnabled(true);
+        texte_nb_chiffres_exacts.setText("0");
+        texte_nb_chiffres_bas.setText("0");
+        texte_nb_chiffres_haut.setText("0");
+        texte_tentatives_nb.setText("0");
+        
+        
+
+
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -384,6 +454,7 @@ public class InterfaceCode extends javax.swing.JFrame {
     private javax.swing.JLabel texte_résultat;
     private javax.swing.JLabel texte_score;
     private javax.swing.JLabel texte_tentatives;
+    private javax.swing.JLabel texte_tentatives_nb;
     private javax.swing.JButton up_chiffre_1;
     private javax.swing.JButton up_chiffre_2;
     private javax.swing.JButton up_chiffre_3;

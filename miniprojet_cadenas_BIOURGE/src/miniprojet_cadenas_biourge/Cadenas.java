@@ -22,6 +22,7 @@ public class Cadenas {
     int Valeur_vérifier;
     int exact;
     
+    
 
     public void Combinaison() {
         Random rand = new Random();
@@ -49,9 +50,9 @@ public class Cadenas {
 
     public int[] Tester(int[] tab_proposé) {
         int[] tab_retour= new int[4];
-        Valeur_exacte = 0;
-        Valeur_inférieur = 0;
-        Valeur_supérieur = 0;
+        Valeur_exacte=0;
+        Valeur_inférieur=0;
+        Valeur_supérieur=0;
         
         for (j = 0; j < 4; j++) {
             if (tab_proposé[j] == tabCombinaison[j]) {
