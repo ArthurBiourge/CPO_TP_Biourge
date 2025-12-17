@@ -38,9 +38,8 @@ public class CelluleLumineuse {
     public boolean estEteint() {
         if (etat == false) {
             etat = true;
-        }
-        if (etat == true) {
-            etat = false;
+        } else if (etat == false) {
+            etat = true;
         }
         return etat;
     }

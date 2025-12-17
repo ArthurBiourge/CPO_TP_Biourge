@@ -21,8 +21,6 @@ public class LightOff_Biourge_version_console {
          System.out.println(Cellule);
          Cellule.eteindreCellule();
          System.out.println(Cellule);
-         Cellule.estEteint();
-         System.out.println(Cellule);
          Cellule.getEtat();
          System.out.println(Cellule);
          
