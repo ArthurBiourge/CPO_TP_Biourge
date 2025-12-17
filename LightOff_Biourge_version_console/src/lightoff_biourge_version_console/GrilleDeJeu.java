@@ -9,5 +9,21 @@ package lightoff_biourge_version_console;
  * @author utilisateur
  */
 public class GrilleDeJeu {
+
+    CelluleLumineuse[][] grille;
+    int nbLignes;
+    int nbColonnes;
+
+    public GrilleDeJeu(int p_nbLignes, int p_nbColonnes) {
+        p_nbLignes = nbLignes;
+        p_nbColonnes = nbColonnes;
+        for (int i = 0; i < nbLignes; i++) {
+            grille[i] = new CelluleLumineuse[nbColonnes];
+            for (int j = 0; j < nbColonnes; j++) {
+                grille[i][j] = new CelluleLumineuse();
+            }
+
+        }
+    }
     
 }
