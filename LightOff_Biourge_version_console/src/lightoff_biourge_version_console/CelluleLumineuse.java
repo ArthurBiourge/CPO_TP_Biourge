@@ -35,23 +35,17 @@ public class CelluleLumineuse {
         return etat;
     }
 
-    public boolean estEteint(boolean etat_reçu_4) {
+    public boolean estEteint() {
         if (etat == false) {
             etat = true;
         }
-        if (etat_reçu_4 == true) {
+        if (etat == true) {
             etat = false;
         }
         return etat;
     }
 
     public boolean getEtat() {
-        if (etat == true) {
-            etat = true;
-        }
-        if (etat == false) {
-            etat = false;
-        }
         return etat;
     }
 

@@ -17,6 +17,14 @@ public class LightOff_Biourge_version_console {
         // TODO code application logic here
          CelluleLumineuse Cellule =new  CelluleLumineuse();
          System.out.println(Cellule);
+         Cellule.activerCellule();
+         System.out.println(Cellule);
+         Cellule.eteindreCellule();
+         System.out.println(Cellule);
+         Cellule.estEteint();
+         System.out.println(Cellule);
+         Cellule.getEtat();
+         System.out.println(Cellule);
          
     }
     
