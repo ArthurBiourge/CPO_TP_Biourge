@@ -25,5 +25,7 @@ public class GrilleDeJeu {
 
         }
     }
+    public void eteindreToutesLesCellules(){// on travail sur cette grille là et elle sera modifier dans la grille donc pas besoin de crée une nouvelle grille.
     
+    }
 }
