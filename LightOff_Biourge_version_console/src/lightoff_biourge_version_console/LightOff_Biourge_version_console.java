@@ -15,6 +15,9 @@ public class LightOff_Biourge_version_console {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         CelluleLumineuse Cellule =new  CelluleLumineuse();
+         System.out.println(Cellule);
+         
     }
     
 }

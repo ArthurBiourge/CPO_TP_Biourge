@@ -10,25 +10,24 @@ package lightoff_biourge_version_console;
  */
 public class CelluleLumineuse {
 
-    private boolean etat;
+    private boolean etat; // la cellule possède l'etat elle ne l'as pas, c'est lui l'état
 
-    public CelluleLumineuse(boolean etat_reçu) {
-        this.etat = etat_reçu;
+    public CelluleLumineuse() {
         etat = false;
     }
 
-    public void activerCellule(boolean etat_reçu_2) {
-        if (etat_reçu_2 == true) {
+    public void activerCellule() {
+        if (etat == true) {
             etat = false;
         }
-        if (etat_reçu_2 == false) {
+        if (etat == false) {
             etat = true;
         }
 
     }
 
-    public boolean eteindreCellule(boolean etat_reçu_3) {
-        if (etat_reçu_3 == true) {
+    public boolean eteindreCellule() {
+        if (etat == true) {
             etat = false;
         } else {
             etat = false;
@@ -37,7 +36,7 @@ public class CelluleLumineuse {
     }
 
     public boolean estEteint(boolean etat_reçu_4) {
-        if (etat_reçu_4 == false) {
+        if (etat == false) {
             etat = true;
         }
         if (etat_reçu_4 == true) {
@@ -46,11 +45,11 @@ public class CelluleLumineuse {
         return etat;
     }
 
-    public boolean getEtat(boolean etat_reçu_4) {
-        if (etat_reçu_4 == true) {
+    public boolean getEtat() {
+        if (etat == true) {
             etat = true;
         }
-        if (etat_reçu_4 == false) {
+        if (etat == false) {
             etat = false;
         }
         return etat;
@@ -60,7 +59,7 @@ public class CelluleLumineuse {
     public String toString() {
         if (etat == true) {
             return "O";
-        } else if (etat == false) {
+        } else {
             return "X";
         }
     }
