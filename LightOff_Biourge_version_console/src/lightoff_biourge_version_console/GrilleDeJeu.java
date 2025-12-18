@@ -78,11 +78,43 @@ public class GrilleDeJeu {
 
     public void activerDiagonaleDescendante() {
         for (int h = 0; h < grille[nbLignes].length; h++) {
-                grille[h][h].activerCellule();
-        
-    }}
+            grille[h][h].activerCellule();
+
+        }
+    }
+
     public void activerDiagonaleMontante() {
         for (int h = 0; h < grille[nbLignes].length; h++) {
-                grille[grille[nbLignes].length-h][grille[nbLignes].length-h].activerCellule();
+            grille[grille[nbLignes].length - h][grille[nbLignes].length - h].activerCellule();
 
-}}}
+        }
+    }
+
+    public boolean cellulesToutesEteintes() {
+        boolean etat;
+        int nb_etat = 0;
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                etat = grille[i][j].getEtat();
+                if (etat == true) {
+                    nb_etat += 1;
+                }
+
+            }
+        }
+        if (nb_etat > 0) {
+            etat = false;
+        } else {
+            etat = true;
+        }
+        return etat;
+    }
+
+    @Override
+    public String toString() {
+        return "GrilleDeJeu{" + "grille=" + grille + '}';
+    }
+
+
+    
+}

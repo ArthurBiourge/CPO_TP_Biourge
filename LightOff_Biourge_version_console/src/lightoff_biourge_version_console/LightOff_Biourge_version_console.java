@@ -23,7 +23,7 @@ public class LightOff_Biourge_version_console {
          System.out.println(Cellule);
          Cellule.getEtat();
          System.out.println(Cellule);
-         
+        
     }
     
 }
