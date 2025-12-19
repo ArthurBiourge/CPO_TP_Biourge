@@ -19,6 +19,7 @@ public class GrilleDeJeu {
     public GrilleDeJeu(int p_nbLignes, int p_nbColonnes) {
         nbLignes = p_nbLignes;
         nbColonnes = p_nbColonnes;
+        grille = new CelluleLumineuse[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
             grille[i] = new CelluleLumineuse[nbColonnes];
             for (int j = 0; j < nbColonnes; j++) {
@@ -40,19 +41,24 @@ public class GrilleDeJeu {
         int ligne_colone_diagonale;
         int num_ligne_colone;
         Random rand = new Random();
-        ligne_colone_diagonale = rand.nextInt(3);
-        num_ligne_colone = rand.nextInt(10);
+        ligne_colone_diagonale = rand.nextInt(4);
+        num_ligne_colone = rand.nextInt(nbLignes);
         if (ligne_colone_diagonale == 0) { //s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une ligne 
-            for (int j = 0; j < grille[nbColonnes].length; j++) {
+            for (int j = 0; j < nbColonnes; j++) {
                 grille[num_ligne_colone][j].activerCellule();
             }
         } else if (ligne_colone_diagonale == 1) {// colone
-            for (int i = 0; i < grille[nbLignes].length; i++) {
+            for (int i = 0; i < nbLignes; i++) {
                 grille[i][num_ligne_colone].activerCellule();
             }
         } else if (ligne_colone_diagonale == 2) {//s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une
-            for (int h = 0; h < grille[nbLignes].length; h++) {
+            for (int h = 0; h < nbLignes; h++) {
                 grille[h][h].activerCellule();
+            }
+        }
+        else if (ligne_colone_diagonale == 3) {//s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une
+            for (int h = 0; h < nbLignes; h++) {
+                grille[nbLignes-1-h][h].activerCellule();
             }
         }
     }
@@ -65,27 +71,27 @@ public class GrilleDeJeu {
     }
 
     public void activerLigneDeCellules(int idLigne) {
-        for (int j = 0; j < grille[nbColonnes].length; j++) {
+        for (int j = 0; j < nbColonnes; j++) {
             grille[idLigne][j].activerCellule();
         }
     }
 
     public void activerColonneDeCellules(int idColonne) {
-        for (int i = 0; i < grille[nbLignes].length; i++) {
+        for (int i = 0; i < nbLignes; i++) {
             grille[i][idColonne].activerCellule();
         }
     }
 
     public void activerDiagonaleDescendante() {
-        for (int h = 0; h < grille[nbLignes].length; h++) {
+        for (int h = 0; h < nbLignes; h++) {
             grille[h][h].activerCellule();
 
         }
     }
 
     public void activerDiagonaleMontante() {
-        for (int h = 0; h < grille[nbLignes].length; h++) {
-            grille[grille[nbLignes].length - h][grille[nbLignes].length - h].activerCellule();
+        for (int h = 0; h < nbLignes; h++) {
+            grille[nbLignes-1-h][h].activerCellule();
 
         }
     }
@@ -112,9 +118,20 @@ public class GrilleDeJeu {
 
     @Override
     public String toString() {
-        return "GrilleDeJeu{" + "grille=" + grille + '}';
+        String affichage_grille = "";
+
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                if (grille[i][j].getEtat() == true) {
+                    affichage_grille += " O ";
+                } else {
+                    affichage_grille += " X ";
+                }
+
+            }
+            affichage_grille += "\n";
+        }
+        return affichage_grille;
     }
 
-
-    
 }

@@ -20,7 +20,7 @@ public class CelluleLumineuse {
         if (etat == true) {
             etat = false;
         }
-        if (etat == false) {
+        else if (etat == false) {
             etat = true;
         }
 
