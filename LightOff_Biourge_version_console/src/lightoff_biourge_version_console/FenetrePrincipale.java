@@ -14,7 +14,9 @@ import javax.swing.JButton;
 public class FenetrePrincipale extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetrePrincipale.class.getName());
-
+    GrilleDeJeu grille; 
+    int nbCoups;
+    int g_tour =10;
     /**
      * Creates new form FenetrePrincipale
      */
@@ -22,15 +24,19 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         initComponents();
         int nbLignes = 10;
         int nbColonnes = 10;
+        
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
         for (int i=0; i < nbLignes; i++) { 
             for (int j=0; j < nbColonnes; j++ ) { 
                 JButton bouton_cellule = new JButton(); // création d'un bouton 
                 PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
-} 
+}       this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
 } 
     }
-
+    public void initialiserPartie() { 
+        grille.eteindreToutesLesCellules(); 
+        grille.melangerMatriceAleatoirement(g_tour); 
+} 
     
 
     /**
