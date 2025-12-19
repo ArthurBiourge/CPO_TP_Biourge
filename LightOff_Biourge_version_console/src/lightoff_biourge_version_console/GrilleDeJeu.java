@@ -12,18 +12,18 @@ import java.util.Random;
  */
 public class GrilleDeJeu {
 
-    CelluleLumineuse[][] grille;
+    CelluleLumineuse[][] matriceCellules;
     int nbLignes;
     int nbColonnes;
 
     public GrilleDeJeu(int p_nbLignes, int p_nbColonnes) {
         nbLignes = p_nbLignes;
         nbColonnes = p_nbColonnes;
-        grille = new CelluleLumineuse[nbLignes][nbColonnes];
+        matriceCellules = new CelluleLumineuse[nbLignes][nbColonnes];
         for (int i = 0; i < nbLignes; i++) {
-            grille[i] = new CelluleLumineuse[nbColonnes];
+            matriceCellules[i] = new CelluleLumineuse[nbColonnes];
             for (int j = 0; j < nbColonnes; j++) {
-                grille[i][j] = new CelluleLumineuse();
+                matriceCellules[i][j] = new CelluleLumineuse();
             }
 
         }
@@ -32,7 +32,7 @@ public class GrilleDeJeu {
     public void eteindreToutesLesCellules() {// on travail sur cette grille là et elle sera modifier dans la grille donc pas besoin de crée une nouvelle grille.
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                grille[i][j].eteindreCellule();
+                matriceCellules[i][j].eteindreCellule();
             }
         }
     }
@@ -45,20 +45,20 @@ public class GrilleDeJeu {
         num_ligne_colone = rand.nextInt(nbLignes);
         if (ligne_colone_diagonale == 0) { //s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une ligne 
             for (int j = 0; j < nbColonnes; j++) {
-                grille[num_ligne_colone][j].activerCellule();
+                matriceCellules[num_ligne_colone][j].activerCellule();
             }
         } else if (ligne_colone_diagonale == 1) {// colone
             for (int i = 0; i < nbLignes; i++) {
-                grille[i][num_ligne_colone].activerCellule();
+                matriceCellules[i][num_ligne_colone].activerCellule();
             }
         } else if (ligne_colone_diagonale == 2) {//s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une
             for (int h = 0; h < nbLignes; h++) {
-                grille[h][h].activerCellule();
+                matriceCellules[h][h].activerCellule();
             }
         }
         else if (ligne_colone_diagonale == 3) {//s'occupe d'allumé ou éteindre(si déja allumé) chaque case sur une
             for (int h = 0; h < nbLignes; h++) {
-                grille[nbLignes-1-h][h].activerCellule();
+                matriceCellules[nbLignes-1-h][h].activerCellule();
             }
         }
     }
@@ -72,26 +72,26 @@ public class GrilleDeJeu {
 
     public void activerLigneDeCellules(int idLigne) {
         for (int j = 0; j < nbColonnes; j++) {
-            grille[idLigne-1][j].activerCellule();
+            matriceCellules[idLigne-1][j].activerCellule();
         }
     }
 
     public void activerColonneDeCellules(int idColonne) {
         for (int i = 0; i < nbLignes; i++) {
-            grille[i][idColonne-1].activerCellule();
+            matriceCellules[i][idColonne-1].activerCellule();
         }
     }
 
     public void activerDiagonaleDescendante() {
         for (int h = 0; h < nbLignes; h++) {
-            grille[h][h].activerCellule();
+            matriceCellules[h][h].activerCellule();
 
         }
     }
 
     public void activerDiagonaleMontante() {
         for (int h = 0; h < nbLignes; h++) {
-            grille[nbLignes-1-h][h].activerCellule();
+            matriceCellules[nbLignes-1-h][h].activerCellule();
 
         }
     }
@@ -101,7 +101,7 @@ public class GrilleDeJeu {
         int nb_etat = 0;
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                etat = grille[i][j].getEtat();
+                etat = matriceCellules[i][j].getEtat();
                 if (etat == true) {
                     nb_etat += 1;
                 }
@@ -122,7 +122,7 @@ public class GrilleDeJeu {
 
         for (int i = 0; i < nbLignes; i++) {
             for (int j = 0; j < nbColonnes; j++) {
-                if (grille[i][j].getEtat() == true) {
+                if (matriceCellules[i][j].getEtat() == true) {
                     affichage_grille += " O ";
                 } else {
                     affichage_grille += " X ";
