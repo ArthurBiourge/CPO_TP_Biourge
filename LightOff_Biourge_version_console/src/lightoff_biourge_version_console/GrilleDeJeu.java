@@ -72,13 +72,13 @@ public class GrilleDeJeu {
 
     public void activerLigneDeCellules(int idLigne) {
         for (int j = 0; j < nbColonnes; j++) {
-            grille[idLigne][j].activerCellule();
+            grille[idLigne-1][j].activerCellule();
         }
     }
 
     public void activerColonneDeCellules(int idColonne) {
         for (int i = 0; i < nbLignes; i++) {
-            grille[i][idColonne].activerCellule();
+            grille[i][idColonne-1].activerCellule();
         }
     }
 

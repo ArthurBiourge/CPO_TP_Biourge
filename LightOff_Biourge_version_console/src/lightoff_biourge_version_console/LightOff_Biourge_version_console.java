@@ -39,8 +39,8 @@ public class LightOff_Biourge_version_console {
         System.out.println(grille1);
         test_matrice_eteintes = grille1.cellulesToutesEteintes();
         System.out.println(test_matrice_eteintes);
-        grille1.activerColonneDeCellules(6);
-        grille1.activerLigneDeCellules(0);
+        grille1.activerColonneDeCellules(7);
+        grille1.activerLigneDeCellules(7);
         System.out.println(grille1);
         
 
