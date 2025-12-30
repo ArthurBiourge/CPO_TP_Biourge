@@ -14,12 +14,12 @@ import javax.swing.JButton;
 public class CelluleGraphique extends JButton {
     CelluleLumineuse celluleLumineuseAssociee;
     int largeur;
-    int longueur;
+    int hauteur;
 
     public CelluleGraphique(CelluleLumineuse celluleLumineuseAssociee, int largeur, int longueur) {
         this.celluleLumineuseAssociee = celluleLumineuseAssociee;
         this.largeur = largeur;
-        this.longueur = longueur;
+        this.hauteur = longueur;
     }
 @Override 
 protected void paintComponent(Graphics g) { 

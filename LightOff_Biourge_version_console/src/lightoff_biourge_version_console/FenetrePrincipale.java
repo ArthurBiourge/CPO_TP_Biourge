@@ -14,29 +14,34 @@ import javax.swing.JButton;
 public class FenetrePrincipale extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetrePrincipale.class.getName());
-    GrilleDeJeu grille; 
+    GrilleDeJeu grille;
     int nbCoups;
-    int g_tour =10;
+    int g_tour = 10;
+
     /**
      * Creates new form FenetrePrincipale
      */
+    public void initialiserPartie() {
+        grille.eteindreToutesLesCellules();
+        grille.melangerMatriceAleatoirement(g_tour);
+
+    }
     public FenetrePrincipale() {
         initComponents();
         int nbLignes = 10;
-        int nbColonnes = 10;
-        
+        int nbColonnes =10 ;
+        this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
+        initialiserPartie();
         PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
-        for (int i=0; i < nbLignes; i++) { 
-            for (int j=0; j < nbColonnes; j++ ) { 
-                CelluleGraphique bouton_cellule = new CelluleGraphique( grille.grille[i][j], 36,36); 
-                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille 
-}       this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
-} 
+        for (int i = 0; i < nbLignes; i++) {
+            for (int j = 0; j < nbColonnes; j++) {
+                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[i][j], 36, 36);
+                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille }}
+            }
+            
+        }
     }
-    public void initialiserPartie() { 
-        grille.eteindreToutesLesCellules(); 
-        grille.melangerMatriceAleatoirement(g_tour); 
-} 
+
     
 
     /**
