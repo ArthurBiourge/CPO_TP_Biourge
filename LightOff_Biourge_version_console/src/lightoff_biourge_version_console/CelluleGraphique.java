@@ -25,4 +25,8 @@ public class CelluleGraphique extends JButton {
 protected void paintComponent(Graphics g) { 
     super.paintComponent(g);  
     this.setText(celluleLumineuseAssociee.toString());}
+
+
+
+
 }

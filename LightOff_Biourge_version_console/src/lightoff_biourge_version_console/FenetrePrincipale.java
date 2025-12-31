@@ -17,6 +17,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeJeu grille;
     int nbCoups;
     int g_tour = 10;
+    int nbLignes=10;
+    int nbColonnes=10;
+    
 
     /**
      * Creates new form FenetrePrincipale
@@ -29,21 +32,43 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
     public FenetrePrincipale() {
         initComponents();
-        int nbLignes = 10;
-        int nbColonnes = 10;
-        this.grille = new GrilleDeJeu(nbLignes, nbColonnes);
+        nb_tentatives.setText("0");
+        this.grille = new GrilleDeJeu(this.nbLignes, this.nbColonnes);
         initialiserPartie();
-        PanneauGrille.setLayout(new GridLayout(nbLignes, nbColonnes));
-        for (int i = 0; i < nbLignes; i++) {
-            for (int j = 0; j < nbColonnes; j++) {
+        PanneauGrille.setLayout(new GridLayout(this.nbLignes, this.nbColonnes));
+        for (int i = 0; i < this.nbLignes; i++) {
+            for (int j = 0; j < this.nbColonnes; j++) {
                 CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[i][j], 36, 36);
                 PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille }}
             }
 
         }
-        
+
     }
 
+    public void GrilleInterfaceEteinte() {
+        boolean etat;
+        int nb_etat = 0;
+        for (int i = 0; i < this.nbLignes; i++) {
+            for (int j = 0; j < this.nbColonnes; i++) {
+                etat = this.grille.matriceCellules[i][j].getEtat();
+                if (etat = true) {
+                    nb_etat += 1;
+                }
+            }
+        }
+        if (nb_etat == 0) {
+            System.out.println("-");
+            
+        }
+    }
+    public void Incrémentation(){
+        int incrementer=0;
+        incrementer= Integer.parseInt (nb_tentatives.getText());
+        incrementer+=1;
+        nb_tentatives.setText(""+incrementer);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,6 +101,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         btnColonne9 = new javax.swing.JButton();
         btnDiagonaleMontant = new javax.swing.JButton();
         btnDiagonaleDescendant = new javax.swing.JButton();
+        texte_tentatives = new javax.swing.JLabel();
+        nb_tentatives = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -271,138 +298,186 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         });
         getContentPane().add(btnDiagonaleDescendant, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 70));
 
+        texte_tentatives.setText("tentatives:");
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, -1, -1));
+        getContentPane().add(nb_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 30, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLigne0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne0ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(0);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne0ActionPerformed
 
     private void btnColonne0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne0ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(0);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne0ActionPerformed
 
     private void btnColonne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne1ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(1);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne1ActionPerformed
 
     private void btnColonne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne2ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(2);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne2ActionPerformed
 
     private void btnColonne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne3ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(3);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne3ActionPerformed
 
     private void btnColonne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne4ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(4);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne4ActionPerformed
 
     private void btnColonne5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne5ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(5);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne5ActionPerformed
 
     private void btnColonne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne6ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(6);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne6ActionPerformed
 
     private void btnColonne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne7ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(7);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne7ActionPerformed
 
     private void btnColonne8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne8ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(8);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne8ActionPerformed
 
     private void btnColonne9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnColonne9ActionPerformed
         // TODO add your handling code here:
         this.grille.activerColonneDeCellules(9);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnColonne9ActionPerformed
 
     private void btnLigne2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne2ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(2);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne2ActionPerformed
 
     private void btnDiagonaleDescendantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiagonaleDescendantActionPerformed
         // TODO add your handling code here:
         this.grille.activerDiagonaleDescendante();
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnDiagonaleDescendantActionPerformed
 
     private void btnLigne1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne1ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(1);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne1ActionPerformed
 
     private void btnLigne3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne3ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(3);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne3ActionPerformed
 
     private void btnLigne4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne4ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(4);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne4ActionPerformed
 
     private void btnLigne5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne5ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(5);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne5ActionPerformed
 
     private void btnLigne6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne6ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(6);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne6ActionPerformed
 
     private void btnLigne7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne7ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(7);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne7ActionPerformed
 
     private void btnLigne8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne8ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(8);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne8ActionPerformed
 
     private void btnLigne9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLigne9ActionPerformed
         // TODO add your handling code here:
         this.grille.activerLigneDeCellules(9);
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnLigne9ActionPerformed
 
     private void btnDiagonaleMontantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiagonaleMontantActionPerformed
         // TODO add your handling code here:
         this.grille.activerDiagonaleMontante();
+        GrilleInterfaceEteinte();
+        Incrémentation();
         repaint();
     }//GEN-LAST:event_btnDiagonaleMontantActionPerformed
 
@@ -455,5 +530,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     private javax.swing.JButton btnLigne7;
     private javax.swing.JButton btnLigne8;
     private javax.swing.JButton btnLigne9;
+    private javax.swing.JLabel nb_tentatives;
+    private javax.swing.JLabel texte_tentatives;
     // End of variables declaration//GEN-END:variables
 }
