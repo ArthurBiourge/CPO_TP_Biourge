@@ -17,9 +17,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     GrilleDeJeu grille;
     int nbCoups;
     int g_tour = 10;
-    int nbLignes=10;
-    int nbColonnes=10;
-    
+    int nbLignes = 10;
+    int nbColonnes = 10;
 
     /**
      * Creates new form FenetrePrincipale
@@ -50,25 +49,26 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         boolean etat;
         int nb_etat = 0;
         for (int i = 0; i < this.nbLignes; i++) {
-            for (int j = 0; j < this.nbColonnes; i++) {
+            for (int j = 0; j < this.nbColonnes; j++) {
                 etat = this.grille.matriceCellules[i][j].getEtat();
-                if (etat = true) {
+                if (etat == true) {
                     nb_etat += 1;
                 }
             }
         }
         if (nb_etat == 0) {
             System.out.println("-");
-            
+
         }
     }
-    public void Incrémentation(){
-        int incrementer=0;
-        incrementer= Integer.parseInt (nb_tentatives.getText());
-        incrementer+=1;
-        nb_tentatives.setText(""+incrementer);
+
+    public void Incrémentation() {
+        int incrementer = 0;
+        incrementer = Integer.parseInt(nb_tentatives.getText());
+        incrementer += 1;
+        nb_tentatives.setText("" + incrementer);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
