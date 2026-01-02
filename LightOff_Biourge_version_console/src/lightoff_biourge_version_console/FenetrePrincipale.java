@@ -21,6 +21,9 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     int g_tour = 10;
     int nbLignes = 10;
     int nbColonnes = 10;
+    int taille =40;
+    int xDepart = 60;       
+    int yDepart = 60;
 
     /**
      * Creates new form FenetrePrincipale
@@ -35,12 +38,12 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         initComponents();
         nb_tentatives.setText("0");
         this.grille = new GrilleDeJeu(this.nbLignes, this.nbColonnes);
-        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, nbColonnes * 40, nbLignes * 40));
+        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(this.xDepart,this.yDepart,this.nbColonnes * this.taille, this.nbLignes * this.taille));
         initialiserPartie();
         PanneauGrille.setLayout(new GridLayout(this.nbLignes, this.nbColonnes));
         for (int h = 0; h < this.nbLignes; h++) {
             for (int k = 0; k < this.nbColonnes; k++) {
-                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[h][k], 36, 36);
+                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[h][k], taille, taille);
                 PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille }}
             }
 
@@ -49,10 +52,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         PanneauBoutonsHorizontaux.setLayout(new GridLayout(1,this.nbColonnes));
         PanneauBoutonDiagonaleDescendant.setLayout(new GridLayout(1,1));
         PanneauBoutonsDiagonaleMontant.setLayout(new GridLayout(1,1));
-        getContentPane().add(PanneauBoutonsVerticaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1 * 40, this.nbLignes * 40));
-        getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20,  this.nbColonnes * 40,1 * 40));
-        getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20,  1 * 40,1 * 40));
-        getContentPane().add(PanneauBoutonsDiagonaleMontant,new org.netbeans.lib.awtextra.AbsoluteConstraints (120,20,1*40,1*40));
+        getContentPane().add(PanneauBoutonsVerticaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(xDepart - taille, yDepart, taille, nbLignes * taille));
+        getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(xDepart, yDepart - taille, nbColonnes * taille, taille));
+        getContentPane().add(PanneauBoutonDiagonaleDescendant, new org.netbeans.lib.awtextra.AbsoluteConstraints(xDepart - taille, yDepart - taille, taille, taille));
+        getContentPane().add(PanneauBoutonsDiagonaleMontant,new org.netbeans.lib.awtextra.AbsoluteConstraints (xDepart - taille,  yDepart + (nbLignes * taille), taille,  taille));
         
         for (int i= 0; i < this.nbLignes; i++) {//début activer ligne automatique
             JButton bouton_ligne = new JButton();
@@ -149,6 +152,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             }
         }
         if (nb_etat == 0) {
+            FenetreVictoire f = new FenetreVictoire() ; 
+            f.setVisible(true) ;
             System.out.println("-");
 
         }
@@ -195,8 +200,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         nb_tentatives = new javax.swing.JLabel();
         PanneauBoutonsVerticaux = new javax.swing.JPanel();
         PanneauBoutonsHorizontaux = new javax.swing.JPanel();
-        PanneauBoutonsDiagonaleMontant = new javax.swing.JPanel();
         PanneauBoutonDiagonaleDescendant = new javax.swing.JPanel();
+        PanneauBoutonsDiagonaleMontant = new javax.swing.JPanel();
 
         btnLigne0.setText(">");
         btnLigne0.addActionListener(new java.awt.event.ActionListener() {
@@ -357,8 +362,8 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 400, 400));
 
         texte_tentatives.setText("tentatives:");
-        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, -1, -1));
-        getContentPane().add(nb_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 30, 20));
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, -1, -1));
+        getContentPane().add(nb_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 490, 30, 20));
 
         PanneauBoutonsVerticaux.setBackground(new java.awt.Color(0, 255, 204));
 
@@ -390,21 +395,6 @@ public class FenetrePrincipale extends javax.swing.JFrame {
 
         getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 400, 70));
 
-        PanneauBoutonsDiagonaleMontant.setBackground(new java.awt.Color(0, 204, 204));
-
-        javax.swing.GroupLayout PanneauBoutonsDiagonaleMontantLayout = new javax.swing.GroupLayout(PanneauBoutonsDiagonaleMontant);
-        PanneauBoutonsDiagonaleMontant.setLayout(PanneauBoutonsDiagonaleMontantLayout);
-        PanneauBoutonsDiagonaleMontantLayout.setHorizontalGroup(
-            PanneauBoutonsDiagonaleMontantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 80, Short.MAX_VALUE)
-        );
-        PanneauBoutonsDiagonaleMontantLayout.setVerticalGroup(
-            PanneauBoutonsDiagonaleMontantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(PanneauBoutonsDiagonaleMontant, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 80, 70));
-
         PanneauBoutonDiagonaleDescendant.setBackground(new java.awt.Color(0, 204, 204));
 
         javax.swing.GroupLayout PanneauBoutonDiagonaleDescendantLayout = new javax.swing.GroupLayout(PanneauBoutonDiagonaleDescendant);
@@ -419,6 +409,21 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         );
 
         getContentPane().add(PanneauBoutonDiagonaleDescendant, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 70));
+
+        PanneauBoutonsDiagonaleMontant.setBackground(new java.awt.Color(0, 204, 204));
+
+        javax.swing.GroupLayout PanneauBoutonsDiagonaleMontantLayout = new javax.swing.GroupLayout(PanneauBoutonsDiagonaleMontant);
+        PanneauBoutonsDiagonaleMontant.setLayout(PanneauBoutonsDiagonaleMontantLayout);
+        PanneauBoutonsDiagonaleMontantLayout.setHorizontalGroup(
+            PanneauBoutonsDiagonaleMontantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 80, Short.MAX_VALUE)
+        );
+        PanneauBoutonsDiagonaleMontantLayout.setVerticalGroup(
+            PanneauBoutonsDiagonaleMontantLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 70, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(PanneauBoutonsDiagonaleMontant, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
