@@ -34,6 +34,17 @@ public class FenetrePrincipale extends javax.swing.JFrame {
     public FenetrePrincipale() {
         initComponents();
         nb_tentatives.setText("0");
+        this.grille = new GrilleDeJeu(this.nbLignes, this.nbColonnes);
+        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, nbColonnes * 40, nbLignes * 40));
+        initialiserPartie();
+        PanneauGrille.setLayout(new GridLayout(this.nbLignes, this.nbColonnes));
+        for (int h = 0; h < this.nbLignes; h++) {
+            for (int k = 0; k < this.nbColonnes; k++) {
+                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[h][k], 36, 36);
+                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille }}
+            }
+
+        }
         PanneauBoutonsVerticaux.setLayout(new GridLayout(this.nbLignes, 1));
         PanneauBoutonsHorizontaux.setLayout(new GridLayout(1,this.nbColonnes));
         PanneauBoutonDiagonaleDescendant.setLayout(new GridLayout(1,1));
@@ -42,8 +53,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
         getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20,  this.nbColonnes * 40,1 * 40));
         getContentPane().add(PanneauBoutonsHorizontaux, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20,  1 * 40,1 * 40));
         getContentPane().add(PanneauBoutonsDiagonaleMontant,new org.netbeans.lib.awtextra.AbsoluteConstraints (120,20,1*40,1*40));
-        this.pack();
-        this.revalidate();
+        
         for (int i= 0; i < this.nbLignes; i++) {//début activer ligne automatique
             JButton bouton_ligne = new JButton();
             bouton_ligne.setText("▶");
@@ -121,20 +131,10 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             PanneauBoutonsDiagonaleMontant.add(bouton_diagonale_montant);
             
         
-        this.grille = new GrilleDeJeu(this.nbLignes, this.nbColonnes);
-        getContentPane().add(PanneauGrille, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, nbColonnes * 40, nbLignes * 40));
-        this.pack();
-        this.revalidate();
-        initialiserPartie();
-        PanneauGrille.setLayout(new GridLayout(this.nbLignes, this.nbColonnes));
-        for (int h = 0; h < this.nbLignes; h++) {
-            for (int k = 0; k < this.nbColonnes; k++) {
-                CelluleGraphique bouton_cellule = new CelluleGraphique(grille.matriceCellules[h][k], 36, 36);
-                PanneauGrille.add(bouton_cellule); // ajout au Jpanel PanneauGrille }}
-            }
-
-        }
         
+      
+      this.pack();
+      this.revalidate();  
     }
 
     public void GrilleInterfaceEteinte() {

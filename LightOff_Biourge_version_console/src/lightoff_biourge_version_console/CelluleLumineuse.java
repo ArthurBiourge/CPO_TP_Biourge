@@ -36,12 +36,7 @@ public class CelluleLumineuse {
     }
 
     public boolean estEteint() {
-        if (etat == false) {
-            etat = true;
-        } else if (etat == false) {
-            etat = true;
-        }
-        return etat;
+        return !etat;
     }
 
     public boolean getEtat() {
