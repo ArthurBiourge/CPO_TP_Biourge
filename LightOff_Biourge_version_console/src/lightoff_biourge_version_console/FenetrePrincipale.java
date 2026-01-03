@@ -116,7 +116,7 @@ public class FenetrePrincipale extends javax.swing.JFrame {
             bouton_diagonale_descendant.addActionListener(ecouteurClick);
             PanneauBoutonDiagonaleDescendant.add(bouton_diagonale_descendant);//fin activer ligne automatique
         JButton bouton_diagonale_montant = new JButton();
-            bouton_diagonale_montant.setText("◣");
+            bouton_diagonale_montant.setText("◥");
             
             
             ecouteurClick = new ActionListener() {
