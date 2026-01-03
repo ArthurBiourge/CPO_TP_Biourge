@@ -29,17 +29,47 @@ public class FenetreVictoire extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btn_menu = new javax.swing.JButton();
+        btn_recommencer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("victoire");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 76, 162, 103));
+        jLabel1.setText("Victoire");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 162, 103));
+
+        btn_menu.setText("retour au menu");
+        btn_menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_menuActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
+
+        btn_recommencer.setText("recommencer");
+        btn_recommencer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_recommencerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menuActionPerformed
+        // TODO add your handling code here:
+        FenetreTitre f = new FenetreTitre() ; 
+            f.setVisible(true) ;
+    }//GEN-LAST:event_btn_menuActionPerformed
+
+    private void btn_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_recommencerActionPerformed
+        // TODO add your handling code here:
+        FenetrePrincipale h = new FenetrePrincipale() ; 
+            h.setVisible(true) ;
+    }//GEN-LAST:event_btn_recommencerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -67,6 +97,8 @@ public class FenetreVictoire extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_menu;
+    private javax.swing.JButton btn_recommencer;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

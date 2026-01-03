@@ -21,10 +21,10 @@ public class FenetreTitre extends javax.swing.JFrame {
      * Creates new form FenetreTitre
      */
     public FenetreTitre() {
-        initComponents();
-        javax.swing.JPanel panneauDesign = (javax.swing.JPanel) this.getContentPane();
-        panneauDesign.setOpaque(false);
-        this.setGlassPane(panneauDesign);
+        initComponents();//création du titres et du bouton
+        javax.swing.JPanel panneauDesign = (javax.swing.JPanel) this.getContentPane(); //manipulation du fond sur lequel est posé le bouton et le texte de plus c'est ce qui se trouve dans init component or ici j'e l'ai supprimé par erreur.
+        panneauDesign.setOpaque(false);//rend ce panneaux sur lequel sont posé les composant transparent 
+        this.setGlassPane(panneauDesign); //permet la superposition du texte/bouton et de la grille qui change 
     panneauDesign.setVisible(true);
         JPanel PanneauGrilleDécor = new JPanel();
         PanneauGrilleDécor.setLayout(new GridLayout(10, 10));
